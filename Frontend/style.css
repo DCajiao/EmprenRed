@@ -1,0 +1,11 @@
+.color-white {
+    color: white !important; 
+}
+.custom-text-color {
+    color: rgb(161, 0, 161);
+}
+.btn-custom-color {
+    background-color: purple;
+    border-color: purple;
+    color: white;
+}
