@@ -14,9 +14,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         e.preventDefault();
         const usuario = document.getElementById('usuario').value;
         const password = document.getElementById('password').value;
-        fetch(`http://localhost:3008/experto/${usuario}/${password}`)
-            .then(response =>
-                response.json()).then(data => {
+        fetch(`http://db_experto:3008/experto/${usuario}/${password}`)
+            .then(response => response.json()).then(data => {
                     if (data !== false) {
                         console.log(data);
                         cargardatoslogin(data);

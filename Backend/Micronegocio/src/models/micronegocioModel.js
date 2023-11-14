@@ -1,9 +1,9 @@
 const mysql = require('mysql2/promise');
 const connection = mysql.createPool({
-  host: 'localhost', // Aqui ya esta con la ip porque ya me sirve pero si no es con la ip es con el localhost
+  host: 'db_micronegocio',
   user: 'root',
-  password: 'mysql',     // el mysql lo tengo con contraseña y por eso le coloco
-  database: 'proyecto', // Este es el nombre de mi base de datos
+  password: 'mysql', 
+  database: 'proyecto',
   port: 3306,
 });
 async function crearMicronegocio(usuario, password, correo, campo, tiempo_en_mercado, vacantes){
