@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    const apiUrl = "http://db_micronegocio:3007/micronegocio";
+    const apiUrl = "http://localhost:3007/micronegocio";
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const idFilter = document.getElementById('idFilter').value = "";
         } else {
             const usuario = JSON.parse(sessionStorage.getItem('usuario'));
-            fetch(`http://db_solicitud:3009/registrarVacante/${idFilter}/${usuario.id}`)
+            fetch(`http://localhost:3009/registrarVacante/${idFilter}/${usuario.id}`)
                 .then(response => response.json())
                 .then(data => {
                     console.log({ data })

@@ -2,19 +2,20 @@ document.addEventListener('DOMContentLoaded', async () => {
     const loginForm = document.getElementById('loginForm');
     const consultLearners = "../consulta_tabla_micron/consulta_tabla_micron.html"
     
+    
     async function cargardatoslogin(data) {
         if (sessionStorage.getItem('usuario')) {
             alert('El usuario ya tiene una sesión abierta');
         } else {
             sessionStorage.setItem('usuario', JSON.stringify(data))
         }
-        window.location.href = './consulta_tabla_micron/consulta_tabla_micron.html'
+        window.location.href = '../consulta_tabla_micron/consulta_tabla_micron.html'
     }
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
         const usuario = document.getElementById('usuario').value;
         const password = document.getElementById('password').value;
-        fetch(`http://db_experto:3008/experto/${usuario}/${password}`)
+        fetch(`http://localhost:3008/experto/${usuario}/${password}`)
             .then(response => response.json()).then(data => {
                     if (data !== false) {
                         console.log(data);

@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const campo = document.getElementById('campo').value;
         const tiempo_en_mercado = document.getElementById('tiempo_en_mercado').value;
         const vacantes = document.getElementById('vacantes').value;
-        const response = await fetch('http://db_micronegocio:3007/micronegocio', {
+        const response = await fetch('http://localhost:3007/micronegocio', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

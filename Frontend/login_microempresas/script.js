@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         e.preventDefault();
         const usuario = document.getElementById('usuario').value;
         const password = document.getElementById('password').value;
-        fetch(`http://db_micronegocio:3007/micronegocio/${usuario}/${password}`)
+        fetch(`http://127.0.0.1:3007/micronegocio/${usuario}/${password}`)
             .then(response =>
                 response.json()).then(data => {
                     if (data !== false) {
