@@ -38,11 +38,11 @@ router.post('/solicitud/', async (req, res) => {
     if (!disponibilidad) {
         return res.json({ error: 'No hay vacantes disponibles' });
     }
-    const response = await axios.get(`http://micronegocio:3007/micronegocio/${id}`);
+    const response = await axios.get(`http://localhost:3007/micronegocio/${id}`);
     const nombreM = response.data.usuario;
     const correoM = response.data.correo;
     const campoM = response.data.campo;
-    const responseExperto = await axios.get(`http://experto:3008/experto/${usuario}`);
+    const responseExperto = await axios.get(`http://localhost:3008/experto/${usuario}`);
     const name = responseExperto.data.nombre_completo;
     const numero = responseExperto.data.numero_telefonico;
     const correo = responseExperto.data.correo;
@@ -59,7 +59,7 @@ async function verificarDisponibilidad(items){
     let disponibilidad  = true;
     for (const producto of items){
         const response = await
-            axios.get(`http://micronegocio:3007/micronegocio/${producto.id}`);
+            axios.get(`http://localhost:3007/micronegocio/${producto.id}`);
         if (response.data.vacantes <= 0){
             disponibilidad = false;
             break;
@@ -70,13 +70,13 @@ async function verificarDisponibilidad(items){
 async function actualizarVacantes(items) {
     for (const producto of items) {
         const resultSelect = await
-            axios.get(`http://micronegocio:3007/micronegocio/${producto.id}`);
+            axios.get(`http://localhost:3007/micronegocio/${producto.id}`);
             if (resultSelect[0].length > 0) {
                 const newCount = resultSelect[0][0]['vacantes'];
                 if (newCount - 1 < 0) {
                     return "No hay vacantes disponibles";
                 }
-                await axios.put(`http://micronegocio:3007/micronegocio/${producto.id}`
+                await axios.put(`http://localhost:3007/micronegocio/${producto.id}`
         )};
     }
 }

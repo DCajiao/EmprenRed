@@ -122,11 +122,11 @@ services:
   web1:
     build: ./Frontend
     volumes:
-      - ./Frontend/html1:/var/www/html/
+      - ./Frontend/html:/var/www/html/
 
   web2:
     build: ./Frontend
     volumes:
-      - ./Frontend/html2:/var/www/html/
+      - ./Frontend/html:/var/www/html/
 networks:
   emprenred:

@@ -89,8 +89,8 @@ document.addEventListener('DOMContentLoaded', async () => {
                 .catch(error => console.error("Error al obtener los datos:", error));
         }
     });
-
 });
+
 
 function graficarDatosTabla(solicitudes) {
     const solicitudInfo = document.getElementById('solicitudInfo');
