@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         const correo = document.getElementById('correo').value;
         const cargo = document.getElementById('cargo').value;
         const tiempo_experiencia = document.getElementById('tiempo_experiencia').value;
-        const response = await fetch('http://localhost:3008/experto', {
+        const response = await fetch('http://20.42.62.120:3008/experto', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             alert('Usted debe iniciar sesión.');
         }
     });
-    const apiUrl = "http://localhost:3008/experto";
+    const apiUrl = "http://20.42.62.120:3008/experto";
     fetch(apiUrl)
         .then(response => response.json())
         .then(data => {

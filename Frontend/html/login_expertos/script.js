@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         e.preventDefault();
         const usuario = document.getElementById('usuario').value;
         const password = document.getElementById('password').value;
-        fetch(`http://localhost:3008/experto/${usuario}/${password}`)
+        fetch(`http://20.42.62.120:3008/experto/${usuario}/${password}`)
             .then(response => response.json()).then(data => {
                     if (data !== false) {
                         console.log(data);
