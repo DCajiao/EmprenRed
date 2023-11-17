@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', async () => {
             const dataUser = JSON.parse(sessionStorage.getItem('usuario'))
             nameUserLogin.innerHTML = dataUser.usuario;
 
-            // Consulta
         } else {
             alert('Usted debe iniciar sesión.');
             window.location.href = href_login_expertos
